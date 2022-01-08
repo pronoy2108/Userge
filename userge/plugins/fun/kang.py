@@ -1,6 +1,6 @@
 """ kang stickers """
 
-# Copyright (C) 2020-2021 by UsergeTeam@Github, < https://github.com/UsergeTeam >.
+# Copyright (C) 2020-2022 by UsergeTeam@Github, < https://github.com/UsergeTeam >.
 #
 # This file is part of < https://github.com/UsergeTeam/Userge > project,
 # and is released under the "GNU v3.0 License Agreement".
@@ -110,7 +110,7 @@ async def kang_(message: Message):
             exist = await message.client.send(
                 GetStickerSet(
                     stickerset=InputStickerSetShortName(
-                        short_name=packname)))
+                        short_name=packname), hash=0))
         except StickersetInvalid:
             pass
         if exist is not False:
@@ -224,7 +224,7 @@ async def sticker_pack_info_(message: Message):
     get_stickerset = await message.client.send(
         GetStickerSet(
             stickerset=InputStickerSetShortName(
-                short_name=replied.sticker.set_name)))
+                short_name=replied.sticker.set_name), hash=0))
     pack_emojis = []
     for document_sticker in get_stickerset.packs:
         if document_sticker.emoticon not in pack_emojis:

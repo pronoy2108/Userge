@@ -1,6 +1,6 @@
 # pylint: disable=missing-module-docstring
 #
-# Copyright (C) 2020-2021 by UsergeTeam@Github, < https://github.com/UsergeTeam >.
+# Copyright (C) 2020-2022 by UsergeTeam@Github, < https://github.com/UsergeTeam >.
 #
 # This file is part of < https://github.com/UsergeTeam/Userge > project,
 # and is released under the "GNU v3.0 License Agreement".
@@ -102,7 +102,7 @@ if userge.has_bot:
         return wrapper
 
     @userge.bot.on_message(
-        filters.private & filters.user(list(Config.OWNER_ID)) & filters.command("start")
+        filters.private & filters.user(list(Config.OWNER_ID)) & filters.command("start"), group=-1
     )
     async def pm_help_handler(_, msg: Message):
         cmd = msg.command[1] if len(msg.command) > 1 else ''

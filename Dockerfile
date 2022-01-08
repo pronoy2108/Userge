@@ -44,8 +44,8 @@ RUN mkdir -p /tmp/ && \
     # clean up
     rm -rf /tmp/rar*
 
-# copy the content of the local src directory to the working directory
-COPY . .
+# clone repository
+RUN git clone https://github.com/UsergeTeam/Userge /app
 
 # install dependencies
 RUN pip install -r requirements.txt
